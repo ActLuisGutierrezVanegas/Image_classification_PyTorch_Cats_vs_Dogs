@@ -85,19 +85,54 @@ The test results are consistent with the performance observed during validation,
 
 The confusion matrix provides a detailed view of the model predictions for each class.
 
-![Confusion Matrix](imagesPrueba/confusion_matrix.png)
+![Confusion Matrix](imagesPrueba/matriz_confusion_CNN_Pytorch.JPG)
 
-Inferencia con imágenes nuevas
-- Aquí pondría las capturas que hiciste con los stickers.
-- Explicar que el modelo fue guardado en .pth y posteriormente cargado para hacer predicciones sobre imágenes no vistas.
+The model correctly classified:
 
-Persistencia del modelo
-- Explicar que usaste:
+- 277 cat images
+- 271 dog images
 
-- Estructura del repositorio- Algo como:
-- .
-├── notebook/
-├── models/
-├── images/
-├── README.md
-└── requirements.txt
+It misclassified:
+
+- 79 cats as dogs
+- 108 dogs as cats
+
+## ## Model Persistence
+
+To avoid retraining the CNN every time it is used, the trained model weights were saved in a `.pth` file using PyTorch.
+
+The model was saved with:
+
+```python
+torch.save(
+    model.state_dict(),
+    "cnn_classifier_cats_dogs.pth"
+)
+```
+
+## Inference on New Images
+
+After training and evaluation, the model was tested on new images that were not part of the training, validation, or test sets.
+
+The trained model was loaded and used to predict the class of each image, returning both the predicted class and the probability associated with each category.
+
+Example predictions are included in this repository.
+
+![Result_1](imagesPrueba/Result_1.JPG)
+![Result_2](imagesPrueba/Result_2.JPG)
+
+![Result_4](imagesPrueba/Result_4.JPG)
+![Result_3](imagesPrueba/Result_3.JPG)
+
+
+
+**Fun fact:** the model was also able to correctly classify cat and dog stickers from WhatsApp, showing that it can generalize beyond standard photographs and handle simple illustrated images as well.
+
+
+
+![Result_6](imagesPrueba/Result_6.JPG)
+![Result_5](imagesPrueba/Result_5.JPG)
+
+
+This inference stage demonstrates that the model can be reused on previously unseen inputs without requiring retraining.
+
