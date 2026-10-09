@@ -74,23 +74,18 @@ Since the dataset is approximately balanced between cats and dogs, **Accuracy** 
 
 The final model achieved the following performance on the test set:
 
-| Metric     | Result |
-
-|------------|--------|
-
-| Accuracy   | 74.56% |
-
-| Precision  | 77.43% |
-
-| Recall ____| 71.50% |
-
-| F1-score   | 74.35% |
+- Accuracy: 74.56%
+- Precision: 77.43%
+- Recall: 71.50%
+- F1-score: 74.35%
 
 The test results are consistent with the performance observed during validation, suggesting that the model generalizes adequately to unseen images.
 
-- Matriz de confusión
-- Incluir la imagen.
-- Breve interpretación.
+## Confusion Matrix
+
+The confusion matrix provides a detailed view of the model predictions for each class.
+
+![Confusion Matrix](imagesPrueba/confusion_matrix.png)
 
 Inferencia con imágenes nuevas
 - Aquí pondría las capturas que hiciste con los stickers.
