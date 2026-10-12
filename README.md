@@ -97,7 +97,7 @@ It misclassified:
 - 79 cats as dogs
 - 108 dogs as cats
 
-## ## Model Persistence
+## Model Persistence
 
 To avoid retraining the CNN every time it is used, the trained model weights were saved in a `.pth` file using PyTorch.
 
